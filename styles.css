@@ -1,0 +1,301 @@
+/* Style de base */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1c1f26, #0d1117);
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* En-tête */
+header {
+    text-align: center;
+    padding: 60px;
+    background-color: #1c1f26;
+    color: #58a6ff;
+    box-shadow: 0px 10px 20px rgba(0, 123, 255, 0.1);
+    border-bottom: 1px solid #30363d;
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #58a6ff;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+header p {
+    font-size: 1.3em;
+    color: #8b949e;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Sections avec dégradé et animation de transition */
+section {
+    padding: 40px;
+    margin: 40px auto;
+    background: rgba(28, 31, 38, 0.9);
+    border-radius: 12px;
+    width: 80%;
+    box-shadow: 0px 4px 20px rgba(0, 123, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 30px rgba(0, 123, 255, 0.3);
+}
+
+h2 {
+    color: #58a6ff;
+    border-bottom: 2px solid #30363d;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 2em;
+    animation: fadeIn 1.8s ease-in-out;
+}
+
+/* Compétences - Modification du curseur */
+ul {
+    list-style-type: none;
+    padding: 0;
+    animation: fadeIn 1.8s ease-in-out;
+}
+
+ul li {
+    padding: 8px 0;
+    color: #8b949e;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+ul li strong {
+    cursor: default; /* Change le curseur pour les mots en gras */
+}
+
+ul li:hover {
+    color: #58a6ff;
+}
+
+/* Articles de projets sans effet de survol */
+article {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #0d1117;
+    border-left: 4px solid #58a6ff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 123, 255, 0.15);
+}
+
+article h3 {
+    color: #c9d1d9;
+}
+
+article p {
+    color: #8b949e;
+    line-height: 1.6em;
+}
+
+a {
+    color: #58a6ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #1f6feb;
+    text-decoration: underline;
+}
+
+/* Contact section styling */
+#contact {
+    text-align: center;
+    font-size: 1.1em;
+    animation: fadeIn 2s ease-in-out;
+}
+
+#contact p, #contact a {
+    color: #c9d1d9;
+}
+
+#contact a {
+    color: #58a6ff;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #1f6feb;
+}
+
+/* Effet de lueur autour du curseur */
+body::after {
+    content: '';
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(88, 166, 255, 0.3);
+    pointer-events: none;
+    transition: transform 0.1s ease;
+    mix-blend-mode: screen;
+}
+
+body:hover::after {
+    animation: glow 2s infinite;
+}
+
+/* Animation de lueur autour du curseur */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 10px 5px rgba(88, 166, 255, 0.3), 0 0 20px 15px rgba(88, 166, 255, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 20px 10px rgba(88, 166, 255, 0.4), 0 0 30px 20px rgba(88, 166, 255, 0.3);
+    }
+}
+
+#character {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background-image: url("ninjameditation.webp"); /* Image du ninja en méditation */
+    background-size: cover;
+    transition: transform 0.1s linear;
+}
+
+/* Animation de repos pour le mur de gauche */
+#character.left-wall {
+    background-image: url("ninjaShuriken.webp"); /* Sprite d'animation de repos */
+    background-size: 90px 30px; /* Largeur totale de 3 frames, chacune de 30px */
+    animation: idle-wall 0.5s steps(3) infinite; /* Animation avec 3 frames */
+}
+
+/* Animation de repos pour le mur de droite */
+#character.right-wall {
+    background-image: url("ninjaShuriken.webp"); /* Sprite d'animation de repos */
+    background-size: 90px 30px; /* Largeur totale de 3 frames, chacune de 30px */
+    animation: idle-wall 0.5s steps(3) infinite; /* Animation avec 3 frames */
+}
+
+/* Classe pour l'animation de course */
+#character.run {
+    background-image: url("ninjacourse.webp"); /* Sprite d'animation de course */
+    background-size: 180px 30px; /* Largeur totale de 6 frames, chacune de 30px */
+    animation: run-animation 0.5s steps(6) infinite; /* Animation avec 6 frames */
+}
+
+
+/* Rotation pour le mur de gauche */
+#character.run.face-down.left-wall {
+    transform: rotate(90deg);
+    transition: none;
+}
+
+/* Rotation pour le mur de droite */
+#character.run.face-up.right-wall {
+    transform: rotate(-90deg);
+    transition: none;
+}
+
+/* Rotation pour le plafond (face vers le haut) */
+#character.run.face-up.left-wall {
+    transform: rotate(90deg) scaleX(-1);
+    transition: none;
+}
+
+/* Rotation pour le sol (face vers le bas) */
+#character.run.face-down.right-wall {
+    transform: rotate(-90deg) scaleX(-1);
+    transition: none;
+}
+
+/* Définition des animations keyframes pour le repos */
+@keyframes idle-wall {
+    from { background-position: 0; }
+    to { background-position: -90px; } /* Boucle à travers les 3 frames */
+}
+
+/* Animation de défilement du sprite de course */
+@keyframes run-animation {
+    from { background-position: 0 0; }
+    to { background-position: -180px 0; } /* Position de fin pour défiler les 6 frames */
+}
+
+/* Animation pour le curseur */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    ul li, article p {
+        font-size: 1em;
+    }
+
+    section {
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    ul li, article p {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header p {
+        font-size: 0.9em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    ul li, article p {
+        font-size: 0.8em;
+    }
+
+    section {
+        padding: 20px;
+    }
+}
+
