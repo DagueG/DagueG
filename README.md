@@ -60,8 +60,6 @@ Analyse complète d'un dataset réel (NYC 2016) : exploration, feature engineeri
 
 ---
 
----
-
 ## Tech Stack
 
 <div align="center">
@@ -83,14 +81,6 @@ Spécialisé en : Machine Learning • MLOps • Data Science • API Design
 
 <div align="center">
 
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.app/?user=DagueG&theme=tokyonight&hide_border=true)](https://github.com/DagueG)
-
-</div>
-
----
-
-<div align="center">
-
-[**GitHub**](https://github.com/DagueG) — Made with 💙
+[**GitHub**](https://github.com/DagueG)
 
 </div>
