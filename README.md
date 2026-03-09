@@ -10,7 +10,7 @@
 
 ## À propos
 
-Je développe des **systèmes d'IA et d'automatisation en production**. Spécialisé dans les pipelines ML robustes, les APIs scalables et l'optimisation basée sur les données.
+Je développe des **systèmes d'IA et d'automatisation en production**. Spécialisé dans les pipelines ML robustes, les APIs scalables et l'optimisation basée sur les données. Pour des raisons de confidentialité, les projets d'automatisation complets réalisés pour des entreprises ne seront pas publiés sur ce GitHub.
 
 **Focus actuel :** Systèmes RAG, MLOps, Prédiction & Optimisation métier
 
