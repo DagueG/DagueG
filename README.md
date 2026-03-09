@@ -1,74 +1,95 @@
-# Bienvenue sur mon GitHub 👋
+# Daniel Guedj
 
-Je suis **Daniel Guedj**, Ingénieur IA & automatisation passionné par les données et l'automatisation.
-
-## 🎯 À propos de moi
-
-- 🤖 Spécialisé en **Machine Learning** et **Data Science**
-- 🔄 Expertise en **MLOps** et automatisation
-- 💻 Développeur **Full-Stack** avec React et Python
-- 📊 Passionné par les données et l'optimisation
-- 🎓 Formation continue via Openclassroom
-
-## 🛠️ Compétences
-
-### Langages
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![HTML/CSS](https://img.shields.io/badge/HTML%2FCSS-E34C26?style=flat-square&logo=html5&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-336791?style=flat-square&logo=postgresql&logoColor=white)
-
-### Domaines
-- **Machine Learning** - Scikit-learn, TensorFlow, PyTorch
-- **Data Science** - Pandas, NumPy, Matplotlib, Seaborn
-- **Web** - React, Node.js, Express
-- **MLOps** - Pipeline, Deployment, Monitoring
-- **Data Engineering** - ETL, Datasets, Preprocessing
-
-## 📁 Mes projets
-
-### 🔴 Actifs en cours
-
-| Projet | Description | Tech |
-|--------|-------------|------|
-| [RAG](https://github.com/DagueG/RAG) | Système RAG (Retrieval Augmented Generation) | Python, IA |
-| [MLOps](https://github.com/DagueG/MLOps) | Pipeline ML et déploiement | Python, ML |
-
-### 🟡 Data Science & ML
-
-| Projet | Description | Tech |
-|--------|-------------|------|
-| [building_conso_data_predict](https://github.com/DagueG/building_conso_data_predict) | Prédiction de consommation énergétique | Python, Jupyter |
-| [Model_Machine_Learning](https://github.com/DagueG/Model_Machine_Learning) | Collection de modèles ML | Python, Scikit-learn |
-| [Auto_classif_data](https://github.com/DagueG/Auto_classif_data) | Classification automatique de données | Python, Jupyter |
-
-### 🟢 Web & Frontend
-
-| Projet | Description | Tech |
-|--------|-------------|------|
-| [ReactApp](https://github.com/DagueG/ReactApp) | Application React | React, JavaScript |
-| [Optimisation](https://github.com/DagueG/Optimisation) | Optimisation web & performance | HTML, CSS |
-
-## 📊 Statistiques
-
-- **204** contributions en 2025-2026
-- **8** repositories publics
-- Contributeur régulier (~30 commits/mois)
-
-## 🤝 Contribution
-
-Je suis ouvert aux contributions ! Consulter [CONTRIBUTING.md](./CONTRIBUTING.md) pour les directives.
-
-## 📞 Contact & Liens
-
-- 🔗 [GitHub Profile](https://github.com/DagueG)
-- 💼 Ouvert aux opportunités en Data Science & ML
-
-## 📝 License
-
-Mes projets sont sous différentes licenses. Consultez chaque repository pour les détails.
+Ingénieur IA & Automatisation | Machine Learning | Data Science
 
 ---
 
-⭐ N'hésitez pas à star mes projets et à contribuer !
+## À propos
+
+Je développe des **systèmes d'IA et d'automatisation** en production. Je construis des pipelines ML robustes, des APIs scalables et des solutions basées sur les données.
+
+Domaines d'intérêt :
+- **Systèmes de recommandation et retrieval** (RAG, vectorisation, embeddings)
+- **Machine Learning en production** (MLOps, déploiement, monitoring)
+- **Data Science appliquée** (prédiction, classification, optimisation)
+- **Automation** (pipelines ETL, traitement de données)
+
+---
+
+## Projets principaux
+
+### [RAG – Système de recommandation d'événements culturels](https://github.com/DagueG/RAG)
+Système de recommandation utilisant Retrieval Augmented Generation (RAG) pour suggérer des événements culturels. Pipeline complet : récupération de données, vectorisation avec embeddings, indexation Faiss, LLM Mistral, API REST.
+
+**Stack** : Python, LangChain, Mistral, Faiss, FastAPI, Docker, MLflow
+
+---
+
+### [Model Machine Learning – API prédiction énergétique](https://github.com/DagueG/Model_Machine_Learning)
+API production pour prédire la consommation énergétique des bâtiments. Architecture modulaire avec validation Pydantic, intégration base de données PostgreSQL, tests automatisés.
+
+**Stack** : Python, FastAPI, PostgreSQL, SQLAlchemy, Random Forest, Docker
+
+---
+
+### [MLOps – Scoring de crédit avec experimentation](https://github.com/DagueG/MLOps)
+Pipeline ML pour évaluer le risque crédit. Inclut gestion des déséquilibres de données, optimisation d'hyperparamètres, tracking MLflow, explainability SHAP.
+
+**Stack** : Python, XGBoost, LightGBM, MLflow, SHAP, scikit-learn
+
+---
+
+### [Building Consumption Prediction – Analyse & modélisation énergétique](https://github.com/DagueG/building_conso_data_predict)
+Projet de data science : exploration complète d'un dataset réel de consommation énergétique suivi de modélisation supervisée pour la prédiction.
+
+**Stack** : Python, Jupyter, Pandas, Scikit-learn
+
+---
+
+## Compétences techniques
+
+**Langages & Frameworks**
+- Python (scikit-learn, Pandas, NumPy, LangChain)
+- FastAPI, Flask
+- SQL, PostgreSQL
+- JavaScript, React (bases)
+
+**ML & Data**
+- Supervised Learning (Regression, Classification)
+- NLP & Embeddings (HuggingFace, OpenAI)
+- Vector Databases (Faiss)
+- Hyperparameter Optimization
+- Model Evaluation & Explainability (SHAP)
+
+**MLOps & Deployment**
+- Docker, Docker-compose
+- MLflow, Model Tracking
+- API Design & Documentation
+- Testing (pytest, automatisé)
+- HuggingFace Spaces
+
+**Data Tools**
+- Jupyter Notebooks
+- Pandas, NumPy
+- Matplotlib, Seaborn
+- ETL, Data Preprocessing
+
+---
+
+## En ce moment
+
+🔍 **Approfondissement** : Systèmes RAG et LLMs en production  
+🛠️ **Infrastructure** : MLOps et déploiement de modèles  
+📊 **Données** : Prédiction et optimisation métier  
+
+---
+
+## Contenus utiles
+
+- [Contribuer à mes projets](CONTRIBUTING.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Structure recommandée des repos](PROJECT_STRUCTURE.md)
+
+---
+
+Vous pouvez me contacter via GitHub ou consulter mes projets pour voir du code en action.
