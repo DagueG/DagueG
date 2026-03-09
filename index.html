@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Guedj - Ingénieur IA & Automatisation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --neon-cyan: #00d4ff;
+            --neon-blue: #0099ff;
+            --neon-green: #39ff14;
+            --neon-pink: #ff006e;
+            --bg-dark: #0a0e27;
+            --bg-darker: #050812;
+            --border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--bg-darker) 0%, #0f1535 50%, #0a0e27 100%);
+            color: #e0e0e0;
+            font-family: 'Courier New', 'Lucida Console', monospace;
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(0, 153, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 50px;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: var(--neon-cyan);
+            text-shadow: 
+                0 0 10px var(--neon-cyan),
+                0 0 20px var(--neon-blue),
+                0 0 30px rgba(0, 212, 255, 0.5);
+            margin-bottom: 10px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .bio {
+            max-width: 800px;
+            margin: 30px auto;
+            color: #a0aec0;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .bio strong {
+            color: var(--neon-green);
+            text-shadow: 0 0 10px var(--neon-green);
+        }
+
+        /* Interests Section */
+        .interests {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+            padding: 30px;
+            background: rgba(0, 20, 40, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+        }
+
+        .interest-item {
+            padding: 15px;
+            border-left: 3px solid var(--neon-cyan);
+            background: rgba(0, 153, 255, 0.05);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .interest-item:hover {
+            border-left-color: var(--neon-green);
+            background: rgba(57, 255, 20, 0.1);
+            transform: translateX(5px);
+        }
+
+        .interest-item strong {
+            color: var(--neon-cyan);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .interest-item p {
+            font-size: 0.9rem;
+            color: #b0b0b0;
+        }
+
+        /* Projects Section */
+        .projects-title {
+            font-size: 2rem;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px var(--neon-cyan);
+            margin: 60px 0 40px;
+            padding: 20px 0;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, rgba(0, 20, 40, 0.7), rgba(0, 30, 60, 0.5));
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-blue), var(--neon-green));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .project-card:hover::before {
+            opacity: 0.3;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .project-card:hover {
+            border-color: var(--neon-cyan);
+            transform: translateY(-10px);
+            box-shadow: 
+                0 0 20px var(--neon-cyan),
+                0 0 40px rgba(0, 212, 255, 0.2),
+                0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-rank {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: var(--neon-pink);
+            text-shadow: 0 0 5px var(--neon-pink);
+            margin-bottom: 10px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px var(--neon-cyan);
+            margin: 15px 0 10px;
+            font-weight: bold;
+        }
+
+        .project-description {
+            color: #c0c0c0;
+            margin: 15px 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .project-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0;
+        }
+
+        .tech-badge {
+            background: rgba(57, 255, 20, 0.1);
+            border: 1px solid var(--neon-green);
+            color: var(--neon-green);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-shadow: 0 0 5px var(--neon-green);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover .tech-badge {
+            background: rgba(57, 255, 20, 0.2);
+            transform: scale(1.05);
+        }
+
+        .project-score {
+            display: inline-block;
+            color: var(--neon-yellow, #ffff00);
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-blue));
+            color: var(--bg-dark);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+            text-shadow: none;
+        }
+
+        .project-link:hover {
+            background: linear-gradient(135deg, var(--neon-green), var(--neon-cyan));
+            box-shadow: 0 0 25px rgba(57, 255, 20, 0.6);
+            transform: scale(1.05);
+        }
+
+        /* Skills Section */
+        .skills-section {
+            background: rgba(0, 20, 40, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 40px;
+            margin: 60px 0;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+        }
+
+        .skills-title {
+            font-size: 1.8rem;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px var(--neon-cyan);
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            padding: 20px;
+            background: rgba(0, 30, 60, 0.5);
+            border-left: 4px solid var(--neon-cyan);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            border-left-color: var(--neon-green);
+            background: rgba(57, 255, 20, 0.05);
+        }
+
+        .skill-category h3 {
+            color: var(--neon-blue);
+            text-shadow: 0 0 5px var(--neon-blue);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .skill-category p {
+            color: #a0aec0;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .skill-category strong {
+            color: var(--neon-green);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 2px solid var(--border-color);
+            margin-top: 60px;
+            color: #6b7280;
+        }
+
+        .social-links {
+            margin: 20px 0;
+        }
+
+        .social-link {
+            display: inline-block;
+            margin: 0 15px;
+            color: var(--neon-cyan);
+            text-decoration: none;
+            font-weight: bold;
+            text-shadow: 0 0 10px var(--neon-cyan);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--neon-green);
+            text-shadow: 0 0 20px var(--neon-green);
+            transform: scale(1.1);
+        }
+
+        .footer-text {
+            color: #6b7280;
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .interests {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 40px 20px 30px;
+            }
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--neon-cyan);
+            border-radius: 5px;
+            box-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--neon-green);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>>> Daniel Guedj</h1>
+            <p class="subtitle">Ingénieur IA & Automatisation</p>
+            <div class="bio">
+                Je développe des <strong>systèmes d'IA et d'automatisation en production</strong>. 
+                Je construis des pipelines ML robustes, des APIs scalables et des solutions basées sur les données.
+            </div>
+        </header>
+
+        <!-- Interests -->
+        <section class="interests">
+            <div class="interest-item">
+                <strong>🤖 AI & LLM</strong>
+                <p>Systèmes de recommandation et retrieval (RAG, vectorisation, embeddings)</p>
+            </div>
+            <div class="interest-item">
+                <strong>⚙️ MLOps</strong>
+                <p>Machine Learning en production (déploiement, monitoring, experimentation)</p>
+            </div>
+            <div class="interest-item">
+                <strong>📊 Data Science</strong>
+                <p>Prédiction, classification, optimisation métier basée sur les données</p>
+            </div>
+            <div class="interest-item">
+                <strong>🔄 Automation</strong>
+                <p>Pipelines ETL, traitement de données, systèmes automatisés</p>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <h2 class="projects-title">Projets Principaux</h2>
+        <div class="projects-grid">
+            <!-- RAG -->
+            <div class="project-card">
+                <span class="project-rank">🥇 PROJET PHARE</span>
+                <h3 class="project-title">RAG</h3>
+                <p class="project-score">Score: 9.5/10 ⭐⭐⭐⭐⭐</p>
+                <p class="project-description">
+                    Système de recommandation d'événements culturels utilisant Retrieval Augmented Generation. 
+                    Pipeline production-ready avec LLM Mistral, vectorisation d'embeddings et indexation Faiss.
+                </p>
+                <div class="project-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">LangChain</span>
+                    <span class="tech-badge">Mistral</span>
+                    <span class="tech-badge">Faiss</span>
+                    <span class="tech-badge">FastAPI</span>
+                </div>
+                <a href="https://github.com/DagueG/RAG" class="project-link">→ Voir le projet</a>
+            </div>
+
+            <!-- Model ML -->
+            <div class="project-card">
+                <span class="project-rank">🥈 PRODUCTION-READY</span>
+                <h3 class="project-title">Model ML</h3>
+                <p class="project-score">Score: 9/10 ⭐⭐⭐⭐⭐</p>
+                <p class="project-description">
+                    API REST pour prédire la consommation énergétique des bâtiments. 
+                    Architecture modulaire, validation Pydantic, intégration PostgreSQL, tests automatisés.
+                </p>
+                <div class="project-stack">
+                    <span class="tech-badge">FastAPI</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                    <span class="tech-badge">SQLAlchemy</span>
+                    <span class="tech-badge">Random Forest</span>
+                    <span class="tech-badge">Docker</span>
+                </div>
+                <a href="https://github.com/DagueG/Model_Machine_Learning" class="project-link">→ Voir le projet</a>
+            </div>
+
+            <!-- MLOps -->
+            <div class="project-card">
+                <span class="project-rank">🥉 EXPERIMENTATION</span>
+                <h3 class="project-title">MLOps</h3>
+                <p class="project-score">Score: 8/10 ⭐⭐⭐⭐</p>
+                <p class="project-description">
+                    Pipeline ML pour scoring de crédit avec gestion du déséquilibre de classe. 
+                    4 modèles testés, tracking MLflow, explainability SHAP et optimisation métier.
+                </p>
+                <div class="project-stack">
+                    <span class="tech-badge">XGBoost</span>
+                    <span class="tech-badge">LightGBM</span>
+                    <span class="tech-badge">MLflow</span>
+                    <span class="tech-badge">SHAP</span>
+                    <span class="tech-badge">scikit-learn</span>
+                </div>
+                <a href="https://github.com/DagueG/MLOps" class="project-link">→ Voir le projet</a>
+            </div>
+
+            <!-- Building Conso -->
+            <div class="project-card">
+                <span class="project-rank">🟡 DATA SCIENCE</span>
+                <h3 class="project-title">Building Conso</h3>
+                <p class="project-score">Score: 5.5/10 ⭐⭐⭐⭐</p>
+                <p class="project-description">
+                    Analyse complète d'un dataset réel de consommation énergétique (NYC 2016). 
+                    EDA approfondie suivie de modélisation supervisée pour prédiction.
+                </p>
+                <div class="project-stack">
+                    <span class="tech-badge">Jupyter</span>
+                    <span class="tech-badge">Pandas</span>
+                    <span class="tech-badge">Scikit-learn</span>
+                    <span class="tech-badge">Matplotlib</span>
+                    <span class="tech-badge">Real Data</span>
+                </div>
+                <a href="https://github.com/DagueG/building_conso_data_predict" class="project-link">→ Voir le projet</a>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <section class="skills-section">
+            <h2 class="skills-title">Compétences Techniques</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Langages & Frameworks</h3>
+                    <p><strong>Python</strong> (scikit-learn, Pandas, NumPy, LangChain)</p>
+                    <p><strong>FastAPI</strong>, Flask</p>
+                    <p><strong>SQL</strong>, PostgreSQL</p>
+                    <p><strong>JavaScript</strong>, React (bases)</p>
+                </div>
+
+                <div class="skill-category">
+                    <h3>ML & Data</h3>
+                    <p><strong>Supervised Learning</strong> (Regression, Classification)</p>
+                    <p><strong>NLP & Embeddings</strong> (HuggingFace, OpenAI)</p>
+                    <p><strong>Vector Databases</strong> (Faiss)</p>
+                    <p><strong>Hyperparameter Optimization</strong></p>
+                </div>
+
+                <div class="skill-category">
+                    <h3>MLOps & Deployment</h3>
+                    <p><strong>Docker</strong>, Docker-compose</p>
+                    <p><strong>MLflow</strong>, Model Tracking</p>
+                    <p><strong>API Design</strong> & Documentation</p>
+                    <p><strong>Testing</strong> (pytest, automated)</p>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Data Tools</h3>
+                    <p><strong>Jupyter</strong> Notebooks</p>
+                    <p><strong>Pandas</strong>, NumPy</p>
+                    <p><strong>Matplotlib</strong>, Seaborn</p>
+                    <p><strong>ETL</strong>, Data Preprocessing</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <h3 style="color: var(--neon-cyan); text-shadow: 0 0 10px var(--neon-cyan); margin-bottom: 20px;">En ce moment</h3>
+            <p style="color: #a0aec0; margin-bottom: 10px;">🔍 Approfondissement en Systèmes RAG et LLMs en production</p>
+            <p style="color: #a0aec0; margin-bottom: 10px;">🛠️ Infrastructure MLOps et déploiement de modèles</p>
+            <p style="color: #a0aec0; margin-bottom: 30px;">📊 Prédiction et optimisation métier basée sur les données</p>
+
+            <div class="social-links">
+                <a href="https://github.com/DagueG" class="social-link">GitHub</a>
+                <a href="https://github.com/DagueG" class="social-link">Portfolio</a>
+            </div>
+
+            <div class="footer-text">
+                <p>Made with 💙 by Daniel Guedj — 2026</p>
+                <p>Consultez mes repos pour du code en production ⚡</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
