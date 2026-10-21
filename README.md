@@ -4,11 +4,11 @@
 
 <div align="center">
 
-[
+
 
 ![Typing SVG](https://readme-typing-svg.demolab.com?font=Courier+New&weight=700&size=24&pause=100&color=00D4FF&center=true&vCenter=true&width=600&lines=AI+Engineer+%7C+LLM+%26+AI+Agents;Process+Automation+in+Production;RAG+%E2%80%A2+Fine-tuning+%E2%80%A2+MLOps)
 
-](https://github.com/DagueG)
+
 
 </div>
 
